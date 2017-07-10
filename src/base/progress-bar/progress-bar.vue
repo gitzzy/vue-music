@@ -40,7 +40,7 @@
           return
         }
         const deltaX = e.touches[0].pageX - this.touch.startX
-        const offsetWidth = Math.min(this.$refs.progress.clientWidth - progressBtnWidth, Math.max(0, this.touch.left + deltaX))
+        const offsetWidth = Math.min(this.$refs.progressBar.clientWidth - progressBtnWidth, Math.max(0, this.touch.left + deltaX))
         this._offset(offsetWidth)
       },
       progressTouchEnd() {
@@ -56,7 +56,7 @@
         this._triggerPercent()
       },
       _triggerPercent() {
-        const barWidth = this.$refs.progress.clientWidth - progressBtnWidth
+        const barWidth = this.$refs.progressBar.clientWidth - progressBtnWidth
         const percent = this.$refs.progress.clientWidth / barWidth
         this.$emit('percentChange', percent)
       },
